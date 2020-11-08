@@ -1,0 +1,51 @@
+<div class="div div__site">
+  <section class="sec sec__bgVideo">
+    <div class="div div__videoWrap">
+      <video  id="bgVideo"  [muted]='videoSettings.muted' [loop]='videoSettings.loop'  [autoplay] ='videoSettings.autoplay' playsinline class="video-block__video">
+        <source  type="video/mp4" [src]="sectionBgVideo.videoSrc">
+      </video>
+      <div class=' div div__coverVideo'></div>
+      <div class=' div div__coverVideo2'></div>
+      <div id='vl'></div>
+    </div>
+    <div class="div div__bgVideoText">
+      <div (mouseenter)='glitchOnce()' #glitchWrapper class="wrapper">
+        <h1  [attr.data-innerText]="sectionBgVideo.h1"  class="glitch" [ngClass]="{'glitch':doGlitch1}" [innerText]= 'sectionBgVideo.h1'>Hello </h1>
+       <p  [attr.data-innerText]="sectionBgVideo.p" class="glitch" [ngClass]="{'glitch':doGlitch2}" [innerText]= 'sectionBgVideo.p'>Text Here</p>
+      </div>
+       <!-- <h1 [innerText]= 'sectionBgVideo.h1'>Hello </h1>
+       <p [innerText]= 'sectionBgVideo.p'>Text Here</p> -->
+    </div>
+  </section>
+
+  <section class="sec sec__two">
+    <h1 id="headingFeature">Features</h1>
+    <div class="div__feature">
+    <div  #sec  *ngFor="let featuredCourse of featuredCourses"   class="div div__featureCard">
+       <h2>{{featuredCourse.h1}}</h2>
+       <p>{{featuredCourse.p}}</p>
+    </div>
+  </div>
+  <img class='' data-rellax-speed="3" src="assets/image/icon6.svg" alt="" class=" rellax img img__one">
+  <img class='rellax' data-rellax-speed="3" src="assets/image/icon7.svg" alt="" class="img img__two rellax">
+  <img class='rellax' data-rellax-speed="4" src="assets/image/icon8.svg" alt="" class="img img__three rellax">
+  <img class='rellax' data-rellax-speed="4" src="assets/image/icon9.svg" alt="" class="img img__four rellax">
+  </section>
+  <section class="sec sec__three">
+    <app-carousel></app-carousel>
+
+  </section>
+  <footer class='footer footer__info'>
+    <div class='div div__logo'>
+      <img src="assets/image/logo/logo.png" alt="">
+    </div>
+    <div class='div div__address'>
+    <p>
+      SENSEI Technologies (P) Ltd.
+      #359, 16th Main, 34th Cross, Jayanagar 4th T Block, Bangalore 560041
+      T: +91-80-41228724 / +91-80-41151846 | E: info@sen-sei.in
+    </p>
+    <a href="https://www.sen-sei.in/" class='a a__primaryLink'>Copyright © Sensei Technologies 2020</a>
+  </div>
+  </footer>
+</div>

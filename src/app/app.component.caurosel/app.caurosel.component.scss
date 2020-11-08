@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap");
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.div__CauroselSlideWrapper{
+  display:flex;
+  // opacity:0;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  position: relative;
+  & .div{
+    width:500px;
+    background-color: rgba(255, 255, 255, 0.384);
+    height:400px;
+    color:#35005b;
+    font-size: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 12px 2px black;
+  }
+  & .div__imageWrapper{
+    display:flex;
+    justify-content: center;
+    & img{
+      width:50%;
+      border-radius: 50%;
+      height:250px;
+      box-shadow: 2px 2px 12px 2px black;
+      align-self: center;
+      &:hover{
+        transition: 1s;
+
+        transform: scale(1.1);
+      }
+    }
+  }
+  & .div__contentWrapper{
+    & h3{
+      color:#009968;
+      text-decoration: underline;
+    }
+    & h4{
+      color:#008158;
+    }
+    & p{
+      text-align: start;
+    }
+  }
+}
+
+.div__CauroselSlideWrapper[data-scroll="in"].div__student{
+  animation:fade-in-from-left 2s forwards;
+}
+.div__CauroselSlideWrapper[data-scroll="in"].div__parent{
+  animation:fade-in-from-right 2s forwards;
+}
+@keyframes fade-in-from-left{
+  from{
+    left:100px;
+    opacity:0;
+  }
+  to{
+    left:0px;
+    opacity:1;
+  }
+}
+@keyframes fade-in-from-right{
+  from{
+    right:100px;
+    opacity:0;
+  }
+  to{
+    right:0px;
+    opacity:1;
+  }
+}
+.h2.h2__heading{
+  text-align: center;
+  color:#00b67c;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  text-shadow: 2px 2px  black;
+}
+
+:host{
+  text-align: center;
+  display: block;
+}
+//Underline
+$und-ani-txt-color:#00b67c;
+$und-ani-hvr-color:#00b67c;
+$und-ani-und-color:#00b67c;
+$und-ani-und-height:4px;
+$und-ani-delay-time:0s;
+$und-ani-real-time:2s;
+#headingFeature{
+  display:inline-block;
+  position: relative;
+  color: $und-ani-txt-color;
+  text-decoration: none;
+}
+
+#headingFeature:hover {
+  color: $und-ani-hvr-color;
+}
+#headingFeature::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: $und-ani-und-height;
+  bottom: 0;
+  left: 0;
+  background-color:$und-ani-und-color;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+
+}
+#headingFeature[data-scroll="in"]::before{
+  animation:underline-ani $und-ani-real-time $und-ani-delay-time;
+}
+#headingFeature:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+@keyframes underline-ani{
+  0%{
+    visibility: hidden;
+    transform: scaleX(0);
+  }
+  50%{
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  100%{
+    visibility: hidden;
+    transform: scaleX(0);
+  }
+}

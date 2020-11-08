@@ -1,0 +1,35 @@
+
+<h2 id='headingFeature'  class="h2 h2__heading" >What Parents say about us</h2>
+<ngb-carousel *ngIf="parentSlideData">
+  <ng-template *ngFor="let parentData of parentSlideData"  ngbSlide>
+    <div class='div div__CauroselSlideWrapper div__parent'>
+       <div class="div div__imageWrapper">
+         <img [src]='parentData.imgSrc' alt="">
+       </div>
+       <div class="div div__contentWrapper">
+         <h3 [innerText]='parentData.name'></h3>
+         <h4 [innerText]='parentData.origin'></h4>
+         <p [innerText]='parentData.desc'></p>
+       </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<h2 id='headingFeature' class="h2 h2__heading" >What Students think</h2>
+<ngb-carousel *ngIf="studentSlideData">
+  <ng-template *ngFor="let studentData of studentSlideData"  ngbSlide>
+    <div class='div div__CauroselSlideWrapper div__student'>
+      <div class="div div__contentWrapper">
+        <h3 [innerText]='studentData.name'></h3>
+        <h4 [innerText]='studentData.origin'></h4>
+        <p [innerText]='studentData.desc'></p>
+      </div>
+       <div class="div div__imageWrapper">
+         <img [src]='studentData.imgSrc' alt="">
+       </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+
