@@ -1,0 +1,1 @@
+.carousel-item.active{animation:flip-in-ver-left .6s cubic-bezier(.25,.46,.45,.94) both}@keyframes flip-in-ver-left{0%{transform:rotateY(80deg);opacity:0}to{transform:rotateY(0);opacity:1}}
